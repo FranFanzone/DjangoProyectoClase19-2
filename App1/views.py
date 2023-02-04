@@ -3,22 +3,10 @@ from django.http import HttpResponse
 from django.template import Template, Context
 from App1.models import *
 
-
-def mostrarPagina(request):
+def inicio(request):
     
-    diccionario = {}
+    return render(request, 'App1/Inicio.html')
     
-    miHtml = open('C:/Users/franc/OneDrive/Escritorio/Python/DjangoCursoPractica/DjangoProyectoClase19-2/Proyecto2/plantillas/plantilla1.html')
-
-    plantilla = Template(miHtml.read())
-    
-    miHtml.close()
-
-    miContexto = Context(diccionario)
-
-    documento = plantilla.render(miContexto)
-
-    return HttpResponse(documento)
 
 def agregarProfe(request):
 
@@ -28,13 +16,14 @@ def agregarProfe(request):
     return HttpResponse(f'Se agrego el profesor {profe1.nombre} {profe1.apellido}.')
 
 def estudiantes(request):
-    return HttpResponse('Vista estudiantes.')
+    return render(request, 'App1/verEstudiante.html')
 
 def profesores(request):
-    return HttpResponse('Vista de profesores.')
+    
+    return render(request, 'App1/verProfesores.html')
 
 def entregables(request):
-    return HttpResponse('Vista de entregables.')
+    return render(request, 'App1/verEntregables.html')
 
 def cursos(request):
-    return HttpResponse('Vista de cursos.')
+    return render(request, 'App1/verCursos.html')
