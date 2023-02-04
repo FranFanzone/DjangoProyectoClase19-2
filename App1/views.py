@@ -26,3 +26,15 @@ def agregarProfe(request):
     profe1.save()
 
     return HttpResponse(f'Se agrego el profesor {profe1.nombre} {profe1.apellido}.')
+
+def estudiantes(request):
+    return HttpResponse('Vista estudiantes.')
+
+def profesores(request):
+    return HttpResponse('Vista de profesores.')
+
+def entregables(request):
+    return HttpResponse('Vista de entregables.')
+
+def cursos(request):
+    return HttpResponse('Vista de cursos.')
